@@ -1,0 +1,68 @@
+@use './../../helpers/functions' as *;
+
+.NotFound {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    height: max-content;
+
+    @include Breakpoints(medium) {
+        align-content: center;
+        padding: 20px 0;
+    }
+
+    @include Breakpoints(small) {
+        align-content: center;
+        padding: 20px 0;
+    }
+
+    @include Breakpoints(mobile) {
+        align-content: center;
+        padding: 20px;
+    }
+
+    .NotFoundGuied {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 20px;
+
+        h1 {
+            margin: 0;
+            font-weight: lighter;
+        }
+
+        span {
+            font-size: 20px;
+        }
+
+        a {
+            padding: 8px 40px;
+            font-size: 30px;
+        }
+    }
+
+    img {
+        width: 50%;
+        object-fit: contain;
+
+        @include Breakpoints(medium) {
+            width: 100%;
+        }
+
+        @include Breakpoints(small) {
+            width: 100%;
+        }
+
+        @include Breakpoints(mobile) {
+            width: 100%;
+        }
+    }
+}

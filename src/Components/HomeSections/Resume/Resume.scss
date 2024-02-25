@@ -1,0 +1,75 @@
+@use './../../../helpers/functions' as *;
+
+.Resume {
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+
+    p,
+    h1 {
+        @include Breakpoints(mobile) {
+            width: 96%;
+        }
+    }
+
+
+    h3 {
+        @include Breakpoints(medium) {
+            margin: 20px 0;
+        }
+
+        @include Breakpoints(small) {
+            margin: 20px 0;
+        }
+
+        @include Breakpoints(mobile) {
+            margin: 20px 0;
+        }
+    }
+
+    .Resume_pt1 {
+        h1 {
+            @include SectionsTitle();
+        }
+
+        p {
+            margin-top: 20px;
+        }
+    }
+
+    .Resume_pt2 {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 50% 50%;
+        height: max-content;
+
+        @include Breakpoints(medium) {
+            grid-template-columns: auto;
+        }
+
+        @include Breakpoints(small) {
+            grid-template-columns: auto;
+        }
+
+        @include Breakpoints(mobile) {
+            grid-template-columns: auto;
+        }
+
+        .Resume_pt2_Summary {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .Resume_pt2_Experience {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+
+        .Cer {
+            position: relative;
+            top: 20px;
+        }
+    }
+
+}

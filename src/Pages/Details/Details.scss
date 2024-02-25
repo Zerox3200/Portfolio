@@ -1,0 +1,55 @@
+@use './../../helpers/functions' as *;
+
+.Details_nav {
+    background-color: whitesmoke;
+    height: 80px;
+    width: 100%;
+
+    @include Breakpoints(mobile) {
+        padding: 1rem 0 !important;
+    }
+
+    h1 {
+        font-weight: lighter;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: $BaseColor;
+    }
+}
+
+.Details {
+    a {
+        text-decoration: none;
+        color: black;
+        @include Animtation(0.5s, linear, all);
+
+        &:hover {
+            color: $BaseColor;
+        }
+    }
+
+    .slick-dots {
+        position: relative;
+        bottom: 0;
+
+        li {
+            button {
+
+                &::before {
+                    color: $BaseColor !important;
+                }
+            }
+        }
+    }
+
+    .MernStack-Details {
+        padding: 30px 0;
+        background-color: whitesmoke;
+    }
+}

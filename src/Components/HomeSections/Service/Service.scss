@@ -1,0 +1,23 @@
+@use './../../../helpers/functions' as *;
+
+.Service {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+
+    p {
+        margin-top: 10px;
+    }
+
+    h1 {
+        @include SectionsTitle();
+    }
+
+    .Services {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        height: max-content;
+    }
+}

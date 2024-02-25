@@ -1,0 +1,36 @@
+@use './../../../../helpers/functions' as *;
+
+.ResumeIntro {
+    padding-left: 20px;
+    height: max-content;
+    margin: 10px 0px;
+
+    h2 {
+        font-weight: bold;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: white;
+            border: $ResumeBorderColor;
+            position: absolute;
+            top: 0;
+            left: -29px;
+        }
+    }
+
+    border: {
+        left: $ResumeBorderColor;
+    }
+
+    ul {
+        padding-left: 1rem;
+
+        li {
+            margin-top: 10px;
+        }
+    }
+}

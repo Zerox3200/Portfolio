@@ -1,0 +1,298 @@
+@use './../../helpers/functions' as *;
+
+.Nav {
+    border: solid #050b14 1px;
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    left: 0;
+    background-color: #050b14;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+    z-index: 4;
+    @include Animtation(1s, linear, all);
+
+    @include Breakpoints(medium) {
+        left: -100%;
+    }
+
+    @include Breakpoints(small) {
+        left: -100%;
+    }
+
+    @include Breakpoints(mobile) {
+        left: -130%;
+    }
+
+    .Nav_Intro {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+
+        img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border: solid #ffffff26 8px;
+        }
+
+        h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        .Accounts {
+            width: 100%;
+            height: max-content;
+            display: flex;
+            justify-content: space-evenly;
+
+            a {
+                text-decoration: none;
+                color: white;
+
+                &:hover {
+                    svg {
+                        background-color: $BaseColor;
+                    }
+                }
+            }
+
+            svg {
+                font-size: 45px;
+                border-radius: 50%;
+                padding: 10px;
+                background-color: #ffffff26;
+                @include Animtation(0.4s, linear, all);
+            }
+        }
+
+        .Links {
+            width: 100%;
+            height: 350px;
+            font-size: 20px;
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            color: rgba(white, 0.3);
+
+            p,
+            a {
+                text-decoration: none;
+                color: rgba(white, 0.4);
+                display: flex;
+                column-gap: 5px;
+                align-items: flex-start;
+                justify-content: flex-start;
+                @include Animtation(0.3s, linear, all);
+                cursor: pointer;
+
+                &.Active {
+                    svg {
+                        color: $BaseColor;
+                    }
+
+                    color: white;
+                }
+
+                &:hover {
+                    svg {
+                        color: $BaseColor;
+                    }
+
+                    color: white;
+                }
+            }
+
+            svg {
+                height: 100%;
+                font-size: 30px;
+                @include Animtation(0.3s, linear, all);
+            }
+        }
+    }
+
+    .Nav_End {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+
+        p {
+            margin: 0;
+        }
+
+        span {
+            font-weight: bold;
+            color: $BaseColor;
+        }
+    }
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    opacity: 0;
+
+    &.Show {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &.Hide {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    @include Animtation(1s, linear, all);
+}
+
+.Sidenav {
+    border: solid #050b14 1px;
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    background-color: #050b14;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+    left: 0;
+    z-index: 4;
+    @include Animtation(1s, linear, all);
+
+
+    @include Breakpoints(large) {
+        display: none;
+    }
+
+    @include Breakpoints(mobile) {
+        overflow-y: scroll;
+        width: 80%;
+    }
+
+    .Nav_Intro {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+
+        img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border: solid #ffffff26 8px;
+        }
+
+        h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        .Accounts {
+            width: 100%;
+            height: max-content;
+            display: flex;
+            justify-content: space-evenly;
+
+            a {
+                text-decoration: none;
+                color: white;
+
+                &:hover {
+                    svg {
+                        background-color: $BaseColor;
+                    }
+                }
+            }
+
+            svg {
+                font-size: 45px;
+                border-radius: 50%;
+                padding: 10px;
+                background-color: #ffffff26;
+                @include Animtation(0.4s, linear, all);
+            }
+        }
+
+        .Links {
+            width: 100%;
+            height: 350px;
+            font-size: 20px;
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            color: rgba(white, 0.3);
+
+            p,
+            a {
+                text-decoration: none;
+                color: rgba(white, 0.4);
+                display: flex;
+                column-gap: 5px;
+                align-items: flex-start;
+                justify-content: flex-start;
+                @include Animtation(0.3s, linear, all);
+                cursor: pointer;
+
+                &.Active {
+                    svg {
+                        color: $BaseColor;
+                    }
+
+                    color: white;
+                }
+
+                &:hover {
+                    svg {
+                        color: $BaseColor;
+                    }
+
+                    color: white;
+                }
+            }
+
+            svg {
+                height: 100%;
+                font-size: 30px;
+                @include Animtation(0.3s, linear, all);
+            }
+        }
+    }
+
+    .Nav_End {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+
+        p {
+            margin: 0;
+        }
+
+        span {
+            font-weight: bold;
+            color: $BaseColor;
+        }
+    }
+}

@@ -1,0 +1,188 @@
+@use './../../../../helpers/functions' as *;
+
+.Certifications {
+    margin-top: 10px;
+    height: max-content;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    border: {
+        left: $ResumeBorderColor;
+    }
+
+    .Certifications_pts {
+        height: max-content;
+        position: relative;
+
+
+        h1 {
+            font-weight: bold;
+            position: relative;
+
+            &::before {
+                content: '';
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                background-color: white;
+                border: $ResumeBorderColor;
+                position: absolute;
+                top: 0;
+                left: -25px;
+            }
+        }
+
+        .Certification {
+            width: 120px;
+            height: 80px;
+            display: flex;
+            border: solid 1px rgba(black, 0.5);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 10px;
+            color: white;
+            overflow: hidden;
+            cursor: pointer;
+
+            &.Route {
+                background-image:
+                    linear-gradient(to right, rgba(black, 0.4), rgba(black, 0.4)), url('./Screenshot\ \(22\).png');
+            }
+
+            &.Senior {
+                background-image:
+                    linear-gradient(to right, rgba(black, 0.4), rgba(black, 0.4)), url('./Screenshot\ \(23\).png');
+            }
+
+            &.Toifel {
+                background-image:
+                    linear-gradient(to right, rgba(black, 0.4), rgba(black, 0.4)), url('./Screenshot\ \(24\).png');
+            }
+
+            svg {
+                margin: auto;
+                font-size: 20px;
+                @include Animtation(0.1s, linear, all);
+            }
+
+            &:hover {
+                svg {
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+
+
+}
+
+.SweetDetails {
+    width: 80%;
+    height: 800px;
+    display: flex;
+
+    @include Breakpoints(mobile) {
+        width: 100%;
+        height: 700px;
+    }
+
+    .Inside_Sweet {
+        display: flex;
+        column-gap: 20px;
+
+        @include Breakpoints(medium) {
+            flex-direction: column;
+        }
+
+        @include Breakpoints(small) {
+            flex-direction: column;
+        }
+
+        @include Breakpoints(mobile) {
+            flex-direction: column;
+        }
+
+        img {
+            object-fit: contain;
+            width: 50%;
+
+            @include Breakpoints(medium) {
+                width: 100%;
+                object-fit: cover;
+            }
+
+            @include Breakpoints(small) {
+                width: 100%;
+                object-fit: cover;
+            }
+
+            @include Breakpoints(mobile) {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .Inside_Sweet_description {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            width: 50%;
+
+            @include Breakpoints(medium) {
+                margin-top: 50px;
+                width: 100%;
+            }
+
+            @include Breakpoints(small) {
+                margin-top: 50px;
+                width: 100%;
+            }
+
+            @include Breakpoints(mobile) {
+                margin-top: 50px;
+                width: 100%;
+            }
+
+            p,
+            li,
+            h1 {
+                text-align: left;
+            }
+
+        }
+    }
+}
+
+.Close {
+    color: black;
+    @include Animtation(0.4s, linear, all);
+
+    @include Breakpoints(medium) {
+        position: relative;
+        left: 10px;
+    }
+
+    @include Breakpoints(small) {
+        position: relative;
+        left: 10px;
+    }
+
+    @include Breakpoints(mobile) {
+        position: relative;
+        left: 10px;
+    }
+
+    &:hover {
+        color: $BaseColor;
+    }
+
+    &:focus {
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+}

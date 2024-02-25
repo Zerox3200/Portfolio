@@ -1,0 +1,36 @@
+@use './../../../helpers/functions' as *;
+
+.Skills {
+    width: 100%;
+    border: solid #f5f8fd 1px;
+    height: max-content;
+    background-color: #f5f8fd;
+    margin-top: 20px;
+    padding: 30px 0;
+
+    .Skiils_pt1 {
+        h2 {
+            @include SectionsTitle();
+        }
+
+        p {
+            margin-top: 25px;
+        }
+    }
+
+    .Skills_Statics {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: flex-start;
+        row-gap: 18px;
+
+        @include Breakpoints(small) {
+            justify-content: center;
+        }
+
+        @include Breakpoints(mobile) {
+            justify-content: center;
+        }
+    }
+}

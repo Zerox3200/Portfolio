@@ -1,0 +1,36 @@
+import { Link } from 'react-router-dom';
+import './Details.scss';
+import { Helmet } from "react-helmet";
+import FrontEnd from './Front-end/FrontEnd';
+import MernStack from './Mern-Stack/MernStack';
+import FrontEndMentor from './FrontEnd-Mentor/FrontEndMentor';
+
+export default function Details() {
+    return (
+        <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Project's Details</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
+            <section className='Details_nav row px-5 py-3'>
+                <h1 className='h2 col-md-9'>Projects Details</h1>
+                <div className="Details_nav_pt1 col-md-3 d-flex gap-2 align-items-center w-auto">
+                    <Link to='/'>Home</Link>
+                    <p>/ Porfolio details</p>
+                </div>
+            </section>
+            <section className='Details'>
+                <div className="FrontEnd-Details">
+                    <FrontEnd />
+                </div>
+                <div className="MernStack-Details">
+                    <MernStack />
+                </div>
+                <div className="FrontEndMentor-Details">
+                    <FrontEndMentor />
+                </div>
+            </section>
+        </>
+    )
+}

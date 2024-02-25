@@ -1,0 +1,58 @@
+@use './../../helpers/functions' as *;
+
+.checkboxtoggler {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: $BaseColor;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 5px;
+    cursor: pointer;
+}
+
+#togglerLable {
+    position: fixed;
+    right: 2%;
+    z-index: 5;
+    top: 2%;
+
+    @include Breakpoints(large) {
+        display: none;
+    }
+}
+
+.line-1,
+.line-2,
+.line-3 {
+    background: white;
+    height: 3px;
+    border-radius: 10em;
+    transition-duration: 500ms;
+}
+
+
+#toggleChecker {
+    height: 3em;
+    width: 100%;
+    display: none;
+}
+
+#toggleChecker:checked+#togglerLable .checkboxtoggler .line-1 {
+    -webkit-transform: rotate(45deg) translateY(0.7em) translateX(0.7em);
+    -ms-transform: rotate(45deg) translateY(0.7em) translateX(0.7em);
+    transform: rotate(45deg) translateY(0.7em) translateX(0.7em);
+}
+
+#toggleChecker:checked+#togglerLable .checkboxtoggler .line-2 {
+    -webkit-transform: rotate(-45deg) translateY(0em) translateX(0.1em);
+    -ms-transform: rotate(-45deg) translateY(0em) translateX(0.1em);
+    transform: rotate(-45deg) translateY(0em) translateX(0.1em);
+}
+
+#toggleChecker:checked+#togglerLable .checkboxtoggler .line-3 {
+    transform: scaleX(0);
+    transform-origin: left;
+}

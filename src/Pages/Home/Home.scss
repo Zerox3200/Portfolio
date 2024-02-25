@@ -1,0 +1,30 @@
+@use './../../helpers/functions' as *;
+
+.Home {
+    height: max-content;
+    margin-left: 300px;
+
+    @include Breakpoints(medium) {
+        margin-left: 0;
+    }
+
+    @include Breakpoints(small) {
+        margin-left: 0;
+    }
+
+    @include Breakpoints(mobile) {
+        margin-left: 0;
+    }
+}
+
+.wrapper-class {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}

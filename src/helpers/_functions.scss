@@ -1,0 +1,64 @@
+@mixin Breakpoints($point) {
+    @if $point ==mobile {
+        @media (max-width:767px) {
+            @content;
+        }
+    }
+
+    @else if $point ==small {
+        @media (min-width:768px) and (max-width:991px) {
+            @content;
+        }
+    }
+
+    @else if $point ==medium {
+        @media (min-width:992px) and (max-width:1199px) {
+            @content;
+        }
+    }
+
+    @else if $point ==large {
+        @media (min-width:1200px) {
+            @content;
+        }
+    }
+}
+
+@mixin Animtation($Time, $Type, $Prop) {
+    transition: $Time $Type $Prop;
+}
+
+@mixin Button() {
+    background-color: $BaseColor;
+    color: white;
+    padding: 10px 25px;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+$BaseColor :#3e9bdb;
+
+$TitleColor: #213a6b;
+
+$ResumeBorderColor: solid #2e5196 2px;
+
+@mixin SectionsTitle() {
+    width: max-content;
+    color: $TitleColor;
+
+    &::after {
+        content: '';
+        display: block;
+        border: solid 2px $BaseColor;
+        width: 60%;
+        border-radius: 10px;
+    }
+}
+
+@mixin BackgroundCenter() {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,44 @@
+@use './../../../../helpers/functions' as *;
+
+.Skill_Loader {
+    width: 47%;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+
+    @include Breakpoints(small) {
+        width: 100%;
+    }
+
+    @include Breakpoints(mobile) {
+        width: 100%;
+    }
+
+    .Skill_Loader_pt1 {
+        width: 100%;
+        height: 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0 5px;
+
+        span {
+            font-weight: bold;
+            font-size: smaller;
+        }
+    }
+
+    .Skill_Loader_pt2 {
+        width: 100%;
+        height: 12px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: #dee8f8;
+
+        .Loading {
+            height: 100%;
+            background-color: $BaseColor;
+        }
+    }
+}

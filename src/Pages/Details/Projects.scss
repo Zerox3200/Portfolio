@@ -1,0 +1,24 @@
+.FrontEnd {
+    width: 100%;
+    height: max-content;
+
+    .FrontEnd_Slider {
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+
+    .FrontEnd_Desc {
+        .Details_Card {
+            box-shadow: 0px 0px 4px #0000007a;
+            border-radius: 5px;
+        }
+
+        ul {
+            li {
+                margin-top: 5px;
+            }
+        }
+    }
+}

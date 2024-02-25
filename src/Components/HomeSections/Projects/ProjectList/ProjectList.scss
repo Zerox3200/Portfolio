@@ -1,0 +1,155 @@
+@use './../../../../helpers/functions' as *;
+
+.Backdrop {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(black, 0.9);
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+
+    .gitHub {
+        @include Animtation(0.5s, linear, all);
+
+        @include Breakpoints(mobile) {
+            display: none;
+        }
+
+        svg {
+            @include Animtation(0.5s, linear, all);
+        }
+
+        a {
+            font-size: 30px;
+            text-decoration: none;
+            margin-left: 10px;
+            color: black;
+            display: flex;
+            align-items: center;
+            @include Animtation(0.5s, linear, all);
+
+            &:hover {
+                color: $BaseColor;
+            }
+        }
+    }
+
+    .CloseButton {
+        position: fixed;
+        right: 40px;
+        top: 34px;
+        color: white;
+        font-size: 45px;
+        @include Animtation(0.3s, linear, all);
+        cursor: pointer;
+
+        @include Breakpoints(mobile) {
+            right: 20px;
+            top: 10px;
+        }
+
+        &:hover {
+            color: $BaseColor;
+        }
+    }
+
+    .ProjectList {
+        width: 100%;
+        z-index: 999;
+
+        .swiper-horizontal {
+            width: 50%;
+
+            @include Breakpoints(medium) {
+                width: 80%;
+            }
+
+            @include Breakpoints(small) {
+                width: 80%;
+                position: relative;
+                top: 60px;
+            }
+
+            @include Breakpoints(mobile) {
+                width: 90%;
+            }
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                position: fixed;
+                top: 50%;
+                width: 50px;
+                height: 60px;
+                color: rgba(white, 0.7);
+                background-color: black;
+                @include Animtation(0.4s, linear, all);
+                z-index: 100;
+            }
+
+            .swiper-button-next {
+                right: 5%;
+
+                @include Breakpoints(medium) {
+                    display: none;
+                }
+
+                @include Breakpoints(small) {
+                    display: none;
+                }
+
+                @include Breakpoints(mobile) {
+                    display: none;
+                }
+            }
+
+            .swiper-button-prev {
+                left: 5%;
+
+                @include Breakpoints(medium) {
+                    display: none;
+                }
+
+                @include Breakpoints(small) {
+                    display: none;
+                }
+
+                @include Breakpoints(mobile) {
+                    display: none;
+                }
+            }
+
+            .card {
+                width: 100%;
+                height: max-content;
+
+                .card-body {
+
+
+                    p {
+                        font-size: 15px;
+                        height: max-content;
+
+                        @include Breakpoints(small) {
+                            display: none;
+                        }
+
+                        @include Breakpoints(mobile) {
+                            display: none;
+                        }
+                    }
+                }
+
+                img {
+                    width: 100%;
+                    height: 400px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

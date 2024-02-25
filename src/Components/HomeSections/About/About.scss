@@ -1,0 +1,87 @@
+@use './../../../helpers/functions' as *;
+
+.About {
+    width: 100%;
+    height: max-content;
+    margin-top: 20px;
+
+    .About_pt1 {
+        h2 {
+            width: max-content;
+            color: $TitleColor;
+
+            &::after {
+                content: '';
+                display: block;
+                border: solid 2px $BaseColor;
+                width: 60%;
+                border-radius: 10px;
+            }
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+
+    .About_pt2 {
+        display: flex;
+        column-gap: 10px;
+
+        @include Breakpoints(small) {
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 20px;
+        }
+
+        @include Breakpoints(mobile) {
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 20px;
+        }
+
+        img {
+            width: 35%;
+            object-fit: cover;
+
+            @include Breakpoints(small) {
+                width: 100%;
+            }
+
+            @include Breakpoints(mobile) {
+                width: 100%;
+            }
+        }
+
+        .About_pt2_Desc {
+            width: 65%;
+
+            @include Breakpoints(small) {
+                width: 100%;
+            }
+
+            @include Breakpoints(mobile) {
+                width: 100%;
+            }
+
+            .About_pt2_Desc_details {
+                display: flex;
+                flex-wrap: wrap;
+
+                svg {
+                    font-size: 15px;
+                    color: $BaseColor;
+                }
+
+                p {
+                    width: 50%;
+
+                    @include Breakpoints(mobile) {
+                        width: 100%;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}
