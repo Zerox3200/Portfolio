@@ -7,7 +7,7 @@ import Loading from './Components/Loading/Loading';
 
 // Import Details lazily
 const Details = lazy(() => import('./Pages/Details/Details'));
-const NotFound = lazy(() => import('./Pages/NotFound/NotFound'))
+const NotFound = lazy(() => import('./Pages/NotFound/NotFound'));
 
 function App() {
   const routers = createHashRouter([

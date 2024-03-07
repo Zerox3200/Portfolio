@@ -69,21 +69,21 @@ export default function ContactUs() {
                     <div className="Details_Location">
                         <LocationOnOutlinedIcon />
                         <div className="Details_Location_Description">
-                            <h4>Location:</h4>
+                            <h1 className='h4'>Location:</h1>
                             <span>8 Matar Street , ElNozha , Cairo</span>
                         </div>
                     </div>
                     <div className="Details_Email">
                         <EmailOutlinedIcon />
                         <div className="Details_Location_Description">
-                            <h4>Location:</h4>
+                            <h1 className='h4'>Email:</h1>
                             <span>ziadahmedsalah222 @gmail.com</span>
                         </div>
                     </div>
                     <div className="Details_Calling">
                         <PhoneAndroidOutlinedIcon />
                         <div className="Details_Location_Description">
-                            <h4>Call:</h4>
+                            <h1 className='h4'>Call:</h1>
                             <span>+201030602579</span>
                         </div>
                     </div>

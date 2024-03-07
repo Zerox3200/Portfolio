@@ -17,7 +17,7 @@ export default function ServiceType({ Icons, Title, Description, Delay }) {
                 {Icons}
             </div>
             <div className="ServiceType_Paragraphs">
-                <h5>{Title}</h5>
+                <h1 className='h5'>{Title}</h1>
                 <p>{Description}
                 </p>
             </div>

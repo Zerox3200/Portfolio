@@ -96,17 +96,21 @@ function Nav() {
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} />
                 <h2>Ziad Ahmed</h2>
                 <div className="Accounts">
-                    <a href="https://www.facebook.com/ziad.ahmed.1481169/" target='_blank' rel='noreferrer'>
+                    <a href="https://www.facebook.com/ziad.ahmed.1481169/"
+                        aria-label="Read more about Seminole's new baby mayor" target='_blank' rel='noreferrer'>
                         <FacebookIcon />
                     </a>
-                    <a href="https://wa.me/+201030602579" target='_blank' rel='noreferrer'>
+                    <a href="https://wa.me/+201030602579"
+                        aria-label="Read more about Seminole's new baby mayor" target='_blank' rel='noreferrer'>
                         <WhatsAppIcon />
                     </a>
                     <a href="https://www.instagram.com/ziadahmedsalah3200?utm_source=qr&igsh=MTUyaGV5dXh2bmt5cA=="
+                        aria-label="Read more about Seminole's new baby mayor"
                         target='_blank' rel='noreferrer'>
                         <InstagramIcon />
                     </a>
-                    <a href="https://www.linkedin.com/in/ziad-ahmed-8118a4233" target='_blank' rel='noreferrer'>
+                    <a href="https://www.linkedin.com/in/ziad-ahmed-8118a4233"
+                        aria-label="Read more about Seminole's new baby mayor" target='_blank' rel='noreferrer'>
                         <LinkedInIcon />
                     </a>
                 </div>

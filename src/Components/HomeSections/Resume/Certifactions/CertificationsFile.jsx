@@ -1,6 +1,6 @@
-import Senior from './Screenshot (22).png';
-import Route from './Screenshot (23).png';
-import Toifel from './Screenshot (24).png'
+import Senior from './../../../../Images/Screenshot (22).png';
+import Route from './../../../../Images/Screenshot (23).png';
+import Toifel from './../../../../Images/Screenshot (24).png'
 
 export const TotalCertifications = [
     {

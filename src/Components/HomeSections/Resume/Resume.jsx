@@ -26,15 +26,15 @@ function Resume() {
             </div>
             <div className="Resume_pt2">
                 <div className="Resume_pt2_Summary">
-                    <h3>Sumary</h3>
+                    <h1 className='h3'>Sumary</h1>
                     <ResumeIntro />
                     <h3>Certfications</h3>
                     <Certifications />
                 </div>
                 <div className="Resume_pt2_Experience">
-                    <h3>Experience</h3>
+                    <h1 className='h3'>Experience</h1>
                     <Experience />
-                    <h3>Education</h3>
+                    <h1 className='h3'>Education</h1>
                     <ResumeEducation />
                 </div>
             </div>

@@ -14,6 +14,7 @@ import Front1 from './../../../Images/FrontEnd1.png';
 import Front2 from './../../../Images/FrontEnd2.png'
 import Mern1 from './../../../Images/Mern1.png';
 import Mern2 from './../../../Images/Mern2.png';
+import ECommerce from './../../../Images/E-Commerce/E-Commerce.png'
 
 
 export const ProjectsCards = [
@@ -43,6 +44,16 @@ export const ProjectsCards = [
         Link: "https://github.com/Zerox3200/React-2"
     },
     {
+        Title: "E-Commerce",
+        Img: ECommerce,
+        Category: "FrontEnd",
+        Desc: `My e-commerce website is designed to revolutionize online shopping,
+              offering users a feature-rich interface coupled with responsive design for optimal 
+              viewing across devices. With an intuitive user experience at its core, customers can
+              effortlessly browse, search, and purchase products in just a few clicks.
+           `,
+        Link: "https://github.com/Zerox3200/E-Commerce"
+    }, {
         Title: "To Do List and I used crud operations on it",
         Img: Mern1,
         Category: "MernStack",
