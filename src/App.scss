@@ -1,3 +1,5 @@
+@use './helpers/functions' as *;
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,4 +8,18 @@
 
 body {
   position: relative;
+
+  &::-webkit-scrollbar {
+    width: 18px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $BaseColor;
+  }
 }
