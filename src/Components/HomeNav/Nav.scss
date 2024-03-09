@@ -14,6 +14,7 @@
     justify-content: space-between;
     padding: 30px 0;
     z-index: 4;
+    overflow-y: scroll;
     @include Animtation(1s, linear, all);
 
     @include Breakpoints(medium) {
@@ -285,6 +286,7 @@
         text-align: center;
         display: flex;
         flex-direction: column;
+        margin-top: 24px;
 
         p {
             margin: 0;

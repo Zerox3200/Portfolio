@@ -10,6 +10,11 @@
         margin-top: 10px;
     }
 
+    .Service_title {
+        @include SectionsTitle();
+        width: max-content !important;
+    }
+
     h1 {
         @include SectionsTitle();
         width: 100%;
