@@ -13,9 +13,13 @@ import Loading from '../../Components/Loading/Loading';
 function Home() {
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
-        setTimeout(() => {
-            setIsLoading(false)
+        const timeoutId = setTimeout(() => {
+            setIsLoading(false);
         }, 1500);
+
+        return () => {
+            clearTimeout(timeoutId);
+        };
     }, []);
     return (
         <>
