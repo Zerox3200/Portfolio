@@ -92,7 +92,7 @@ function Nav() {
         {ShowSide ? <div className="backdrop Show"></div> : <div className="backdrop Hide"></div>}
         <nav className={ShowSide ? 'Sidenav' : 'Nav'}>
             <div className="Nav_Intro">
-                <motion.img src={PersonalePhoto} alt="Personal"
+                <motion.img src={PersonalePhoto} alt="Personal" loading='lazy'
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} />
                 <h2>Ziad Ahmed</h2>
                 <div className="Accounts">

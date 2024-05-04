@@ -20,7 +20,7 @@ export default function ECommerce() {
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, type: 'spring' }}
             className="E_Commerce row justify-content-center w-100 mt-3 px-2" key={index}>
             <Slider {...settings} className='col-md-8 E_Commerce_Slider' >
-                {ECom.CoverImage.map((imgages, index) => <div key={index}><img src={imgages} alt="..." srcSet="" /></div>)}
+                {ECom.CoverImage.map((imgages, index) => <div key={index}><img src={imgages} alt="..." loading='lazy' /></div>)}
             </Slider>
             <div className="E_Commerce_Desc col-md-8 d-flex flex-column">
                 <div className="Details_Card p-4">

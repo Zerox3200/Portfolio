@@ -62,5 +62,13 @@ export const AllSkills = [
     {
         Title: "Git and Git hub",
         Precentage: "85%",
+    },
+    {
+        Title: "Next js",
+        Precentage: "90%",
+    },
+    {
+        Title: "Unit Testing",
+        Precentage: "80%",
     }
 ]

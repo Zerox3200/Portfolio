@@ -27,7 +27,7 @@ function Intro() {
                     repeat={Infinity}
                 />
             </div>
-            <motion.img src={MainPhoto} alt=""
+            <motion.img src={MainPhoto} alt="..." loading='lazy'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, ease: "linear" }}

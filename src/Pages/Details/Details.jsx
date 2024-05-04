@@ -10,9 +10,7 @@ export default function Details() {
     return (
         <>
             <Helmet>
-                <meta charSet="utf-8" />
                 <title>Project's Details</title>
-                <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
             <section className='Details_nav row px-5 py-3'>
                 <h1 className='h2 col-md-9'>Projects Details</h1>

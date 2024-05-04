@@ -11,7 +11,7 @@ export default function Certifications() {
             backdrop: 'rgb(62 155 219 / 39%)',
             html: `
                     <div class="Inside_Sweet">
-                          <img src="${Img}" alt="Image" style="max-width: 100%; height: auto;">
+                          <img src="${Img}" alt="Image" style="max-width: 100%; height: auto;" loading="lazy">
                           <div class="Inside_Sweet_description">
                                 <h1 class='h4'>${Title}</h1>
                                 <p>${Desc}</p>
@@ -48,7 +48,8 @@ export default function Certifications() {
                         className={`Certification ${Certification.Type}`}
                         onClick={() =>
                             CertifacteDetails(Certification.Title,
-                                Certification.img, Certification.Desc,
+                                Certification.img,
+                                Certification.Desc,
                                 Certification.Details.Details_Desc,
                                 Certification.Details.Skills,
                                 Certification.Details.KeyPoints

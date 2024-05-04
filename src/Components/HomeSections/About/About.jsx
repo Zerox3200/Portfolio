@@ -17,7 +17,7 @@ function About() {
                 </p>
             </div>
             <div className="About_pt2">
-                <motion.img src={AboutPhoto} alt="" initial={{ opacity: 0, x: -5 }}
+                <motion.img src={AboutPhoto} alt="..." loading='lazy' initial={{ opacity: 0, x: -5 }}
                     animate={InView && { opacity: 1, x: 0 }}
                     transition={{ duration: .8, ease: "linear", delay: .3 }}
                     ref={ref} />

@@ -21,7 +21,7 @@ export default function ProjectList() {
                 {ProjectsCards.map((card, index) => (
                     <SwiperSlide key={index}>
                         <div className="card">
-                            <img src={card.Img} className="card-img-top" alt="..." />
+                            <img src={card.Img} className="card-img-top" alt="..." loading='lazy' />
                             <div className="card-body">
                                 <h1 className="card-title h4">{card.Title}</h1>
                                 <p className='card-text'>{card.Desc}</p>
