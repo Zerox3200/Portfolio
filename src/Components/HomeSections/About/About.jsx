@@ -1,5 +1,5 @@
 import './About.scss'
-import AboutPhoto from './../../../Images/IMG_20220519_160150.jpg'
+import AboutPhoto from './../../../Images/3d-portrait-businessman.jpg'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';

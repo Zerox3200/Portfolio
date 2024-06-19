@@ -1,7 +1,7 @@
 @use './../../../helpers/functions' as *;
 
 .Intro {
-    height: 970px;
+    height: 1100px;
     width: 100%;
     display: flex;
     background-color: black;
@@ -41,6 +41,8 @@
     img {
         width: 62%;
         object-fit: cover;
+        animation: IntroImage 1.5s infinite ease-in-out;
+
 
         @include Breakpoints(medium) {
             height: 100%;
@@ -55,5 +57,19 @@
             width: 90%;
             order: 1;
         }
+    }
+}
+
+@keyframes IntroImage {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0px);
     }
 }

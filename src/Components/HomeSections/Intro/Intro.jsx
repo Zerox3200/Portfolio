@@ -1,5 +1,5 @@
 import './Intro.scss';
-import MainPhoto from './../../../Images/PicsArt_02-25-04.40.35.jpg'
+import MainPhoto from './../../../Images/beautiful-office-space-cartoon-style.jpg'
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
 
@@ -27,7 +27,7 @@ function Intro() {
                     repeat={Infinity}
                 />
             </div>
-            <motion.img src={MainPhoto} alt="..." loading='lazy'
+            <motion.img src={MainPhoto} alt="..." loading='eager'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, ease: "linear" }}

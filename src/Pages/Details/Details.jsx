@@ -5,6 +5,7 @@ import FrontEnd from './Front-end/FrontEnd';
 import MernStack from './Mern-Stack/MernStack';
 import FrontEndMentor from './FrontEnd-Mentor/FrontEndMentor';
 import ECommerce from './E-Commerce/ECommerce';
+import ReaLife from './ReaLife/ReaLife';
 
 export default function Details() {
     return (
@@ -20,6 +21,9 @@ export default function Details() {
                 </div>
             </section>
             <section className='Details'>
+                <div className="Real-Life">
+                    <ReaLife />
+                </div>
                 <div className="ECommerce-Details">
                     <ECommerce />
                 </div>

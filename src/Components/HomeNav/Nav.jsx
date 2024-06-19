@@ -1,5 +1,5 @@
 import './Nav.scss'
-import PersonalePhoto from './../../Images/PicsArt_03-16-05.40.05.jpg';
+import PersonalePhoto from './../../Images/IMG-20240619-WA0009.jpg';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
