@@ -1,5 +1,6 @@
 import DeenBook from '../../../Images/combo.png'
 import Zaki from '../../../Images/Zaki.png'
+import Rqm from '../../../Images/New_logo.png'
 
 export const RealLifeProjects = [{
     Title: "deenbook",
@@ -25,6 +26,19 @@ export const RealLifeProjects = [{
     ProjectLink: 'https://thaki.app/',
     CoverImage: Zaki,
     Project_Date: 'June 15, 2024'
+},
+{
+    Title: "RQM AI",
+    Category: "Products",
+    Desc: `RQM AI is a cutting-edge platform designed to offer advanced data analysis solutions, similar to Zoho, with a
+    special focus on meeting the needs of Saudi Arabian citizens and businesses. Whether users upload personal data or
+    complex business datasets, RQM AI efficiently processes and analyzes the information, providing actionable insights
+    and reports. With an intuitive interface and powerful AI-driven algorithms, it empowers users to make data-driven 
+    decisions, optimize operations, and uncover hidden patterns, all in compliance with local data regulations.`
+    ,
+    ProjectLink: 'https://rqm.ai/Login',
+    CoverImage: Rqm,
+    Project_Date: 'July 15, 2024'
 },
 
 ];
