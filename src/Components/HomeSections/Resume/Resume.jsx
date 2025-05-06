@@ -5,6 +5,7 @@ import ResumeEducation from './Resume_Education/ResumeEducation';
 import ResumeIntro from './Resume_Intro/ResumeIntro';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { Experiences } from './Experience/ExperienceFile';
 
 function Resume() {
     const ref = useRef();
@@ -30,12 +31,20 @@ function Resume() {
                     <ResumeIntro />
                     <h3>Certfications</h3>
                     <Certifications />
+                    <h1 className='h3 mt-5'>Education</h1>
+                    <ResumeEducation />
                 </div>
                 <div className="Resume_pt2_Experience">
                     <h1 className='h3'>Experience</h1>
-                    <Experience />
-                    <h1 className='h3'>Education</h1>
-                    <ResumeEducation />
+
+                    <div className="Experience_Border">
+                        {Experiences?.map((ele, index) =>
+                            <div key={index}>
+                                <Experience date={ele.date} descriptions={ele.descriptions} link={ele.link} title={ele.title} type={ele.type} />
+                            </div>
+                        )}
+                    </div>
+
                 </div>
             </div>
         </motion.section>

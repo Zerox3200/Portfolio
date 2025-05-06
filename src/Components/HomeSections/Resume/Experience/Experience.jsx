@@ -1,20 +1,16 @@
 import './Experience.scss';
 
-export default function Experience() {
+export default function Experience({ title, date, type, descriptions, link }) {
     return (
         <div className='Experience'>
-            <h2 className='h5'>Fresh Front-End Developer</h2>
-            <p>Oct 2023 - Nov 2024</p>
-            <span>Sysgot 10th Ramadan city</span>
+            <h2 className='h5'>{title}</h2>
+            <p>{date}</p>
+            <span>{type}</span>
             <ul>
-                <li>Lead in the design, development, and implementation of the graphic, layout,
-                    and production communication materials
-                </li>
-                <li>I was the only fron-end developer and I got the UI UX of all the projects that I worked in</li>
-                <li>Worked on <a target='_blank' href="https://www.kredeplast.com/" rel='noreferrer'>
-                    Krede Plast</a>
-                </li>
+                {descriptions?.map((desc, index) => <li key={index}>{desc}</li>)}
             </ul>
+            <p>Project Url : <a href={link} style={{ color: "blue", textDecoration: "none", fontWeight: "bold" }}>Project Url</a></p>
+
         </div>
     )
 }

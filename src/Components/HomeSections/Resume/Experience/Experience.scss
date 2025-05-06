@@ -1,33 +1,38 @@
 @use './../../../../helpers/functions' as *;
 
+.Experience_Border {
+    border: {
+        left: $ResumeBorderColor;
+    }
+}
+
 .Experience {
     display: flex;
     flex-direction: column;
     padding-left: 15px;
     height: max-content;
+    padding-bottom: 12px;
 
     @include Breakpoints(small) {
         margin-top: 30px;
     }
 
-    border: {
-        left: $ResumeBorderColor;
-    }
+
 
     h2 {
         font-weight: bold;
         position: relative;
 
         &::before {
-            content: '';
-            width: 18px;
-            height: 18px;
+            content: "";
+            width: 21px;
+            height: 21px;
             border-radius: 50%;
             background-color: white;
-            border: $ResumeBorderColor;
+            border: solid #2e5196 2px;
             position: absolute;
-            top: 0;
-            left: -25px;
+            top: 0px;
+            left: -26px;
         }
     }
 
