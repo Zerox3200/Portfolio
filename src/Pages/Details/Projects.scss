@@ -1,87 +1,494 @@
 @use '../../helpers/functions' as *;
 
-.FrontEnd {
+// Enhanced Project Component Styles
+.FrontEnd, .E_Commerce, .Real-Life, .MernStack-Details, .FrontEndMentor-Details {
     width: 100%;
     height: max-content;
+    margin-bottom: 2rem;
 
-    .FrontEnd_Slider {
+    .Project_Image{
+        width: 300px;
+        object-fit: contain;
+
+        @include Breakpoints(mobile){
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    
+    // Enhanced Slider Styles
+    .FrontEnd_Slider, .E_Commerce_Slider {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+        
         img {
             width: 100%;
-            border-radius: 10px;
-        }
-    }
-
-    .FrontEnd_Desc {
-        .Details_Card {
-            box-shadow: 0px 0px 4px #0000007a;
-            border-radius: 5px;
-        }
-
-        ul {
-            li {
-                margin-top: 5px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
             }
         }
-    }
-}
-
-.E_Commerce {
-    width: 100%;
-    height: max-content;
-
-    .E_Commerce_Slider {
-        img {
-            width: 100%;
-            border-radius: 10px;
-        }
-    }
-
-    .E_Commerce_Desc {
-        .Details_Card {
-            box-shadow: 0px 0px 4px #0000007a;
-            border-radius: 5px;
-        }
-
-        ul {
-            li {
-                margin-top: 5px;
+        
+        // Custom Slick Arrow Styles
+        .slick-prev, .slick-next {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            
+            &:hover {
+                background: rgba(255, 255, 255, 0.2);
+                transform: scale(1.1);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            }
+            
+            &::before {
+                font-size: 20px;
+                color: white;
             }
         }
+        
+        .slick-prev {
+            left: 15px;
+        }
+        
+        .slick-next {
+            right: 15px;
+        }
     }
-}
-
-.Real-Life {
-    width: 100%;
-    height: max-content;
-
-    .Real-Life {
-        .CoverImage {
-            width: 100%;
-
-            img {
-                width: 60%;
-                height: 200px;
-                border-radius: 10px;
-                object-fit: contain;
-
-                @include Breakpoints(mobile) {
-                    width: 100%;
+    
+    // Enhanced Description Styles
+    .FrontEnd_Desc, .E_Commerce_Desc {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        
+        .Details_Card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            }
+            
+            &:hover {
+                box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+                transform: translateY(-5px);
+            }
+            
+            h1 {
+                color: white;
+                font-weight: 700;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                position: relative;
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -8px;
+                    left: 0;
+                    width: 40px;
+                    height: 3px;
+                    background: #667eea;
+                    border-radius: 2px;
+                }
+            }
+            
+            ul {
+                li {
+                    margin-bottom: 1rem;
+                    padding: 0.75rem 0;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    
+                    &:last-child {
+                        border-bottom: none;
+                        margin-bottom: 0;
+                    }
+                    
+                    b {
+                        color: rgba(255, 255, 255, 0.9);
+                        font-weight: 600;
+                        min-width: 120px;
+                        display: inline-block;
+                    }
+                    
+                    a {
+                        color: #667eea;
+                        text-decoration: none;
+                        padding: 0.5rem 1rem;
+                        border-radius: 25px;
+                        background: rgba(102, 126, 234, 0.1);
+                        border: 1px solid rgba(102, 126, 234, 0.3);
+                        transition: all 0.3s ease;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        font-weight: 500;
+                        
+                        &::before {
+                            content: '🔗';
+                            font-size: 0.9rem;
+                        }
+                        
+                        &:hover {
+                            background: rgba(102, 126, 234, 0.2);
+                            transform: translateY(-2px);
+                            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+                        }
+                    }
                 }
             }
         }
-
-    }
-
-    .Real-Life {
-        .Details_Card {
-            box-shadow: 0px 0px 4px #0000007a;
-            border-radius: 5px;
+        
+        // Project Title and Description
+        h1.h3 {
+            color: white;
+            font-weight: 700;
+            font-size: 2rem;
+            margin: 0 0 1rem 0;
+            position: relative;
+            background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.8) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -8px;
+                left: 0;
+                width: 60px;
+                height: 4px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 2px;
+            }
         }
+        
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            font-size: 1.1rem;
+            margin: 0;
+            text-align: justify;
+        }
+    }
+}
 
-        ul {
-            li {
-                margin-top: 5px;
+// Real Life Projects Specific Styles
+.Real-Life {
+    .Real-Life {
+        .CoverImage {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 2rem;
+            
+            img {
+                width: 60%;
+                height: 300px;
+                border-radius: 20px;
+                object-fit: cover;
+                box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    transform: scale(1.02);
+                    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+                }
+                
+                @include Breakpoints(mobile) {
+                    width: 100%;
+                    height: 250px;
+                }
+            }
+        }
+        
+        .Details_Card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            }
+            
+            &:hover {
+                box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+                transform: translateY(-5px);
+            }
+            
+            h1 {
+                color: white;
+                font-weight: 700;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                position: relative;
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -8px;
+                    left: 0;
+                    width: 40px;
+                    height: 3px;
+                    background: #667eea;
+                    border-radius: 2px;
+                }
+            }
+            
+            ul {
+                li {
+                    margin-bottom: 1rem;
+                    padding: 0.75rem 0;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    
+                    &:last-child {
+                        border-bottom: none;
+                        margin-bottom: 0;
+                    }
+                    
+                    b {
+                        color: rgba(255, 255, 255, 0.9);
+                        font-weight: 600;
+                        min-width: 120px;
+                        display: inline-block;
+                    }
+                    
+                    a {
+                        color: #667eea;
+                        text-decoration: none;
+                        padding: 0.5rem 1rem;
+                        border-radius: 25px;
+                        background: rgba(102, 126, 234, 0.1);
+                        border: 1px solid rgba(102, 126, 234, 0.3);
+                        transition: all 0.3s ease;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        font-weight: 500;
+                        
+                        &::before {
+                            content: '🔗';
+                            font-size: 0.9rem;
+                        }
+                        
+                        &:hover {
+                            background: rgba(102, 126, 234, 0.2);
+                            transform: translateY(-2px);
+                            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+                        }
+                    }
+                }
             }
         }
     }
+}
+
+// MERN Stack Specific Styles
+.MernStack-Details {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border-radius: 20px;
+    margin: 2rem 0;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    .MernStack {
+        // Inherit the same styles as other project components
+        @extend .FrontEnd;
+    }
+}
+
+// Enhanced Slick Dots
+.slick-dots {
+    position: relative;
+    bottom: 0;
+    margin-top: 2rem;
+    
+    li {
+        margin: 0 0.5rem;
+        
+        button {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            transition: all 0.3s ease;
+            
+            &::before {
+                display: none;
+            }
+            
+            &:hover {
+                background: #667eea;
+                transform: scale(1.2);
+                box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+            }
+        }
+        
+        &.slick-active button {
+            background: #667eea;
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+        }
+    }
+}
+
+// Responsive Design
+@include Breakpoints(mobile) {
+    .FrontEnd, .E_Commerce, .Real-Life, .MernStack-Details, .FrontEndMentor-Details {
+        .FrontEnd_Slider, .E_Commerce_Slider {
+            img {
+                height: 250px;
+            }
+        }
+        
+        .FrontEnd_Desc, .E_Commerce_Desc {
+            gap: 1rem;
+            
+            .Details_Card {
+                padding: 1.5rem;
+                
+                h1 {
+                    font-size: 1.25rem;
+                }
+                
+                ul li {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 0.25rem;
+                    
+                    b {
+                        min-width: auto;
+                    }
+                }
+            }
+            
+            h1.h3 {
+                font-size: 1.5rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+    
+    .Real-Life {
+        .Real-Life {
+            .CoverImage img {
+                height: 200px;
+            }
+        }
+    }
+    
+    .MernStack-Details {
+        padding: 2rem 0;
+        margin: 1rem 0;
+    }
+}
+
+// Loading Animation for Images
+.image-loading {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 20px;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+// Hover Effects for Interactive Elements
+.FrontEnd, .E_Commerce, .Real-Life, .MernStack-Details, .FrontEndMentor-Details {
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+    }
+}
+
+// Focus States for Accessibility
+.FrontEnd_Slider, .E_Commerce_Slider {
+    .slick-prev:focus,
+    .slick-next:focus {
+        outline: 2px solid #667eea;
+        outline-offset: 2px;
+    }
+}
+
+.Details_Card a:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+// Glass morphism effects
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+}
+
+// Gradient text effects
+.gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+// Enhanced shadows
+.elevated-shadow {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.elevated-shadow-hover {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
 }

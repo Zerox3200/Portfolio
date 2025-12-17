@@ -11,7 +11,7 @@ export default function ReaLife() {
             className="Real-Life row justify-content-center w-100 mt-3 px-2" key={index}>
 
             <div key={index} className='CoverImage d-flex justify-content-center p-5'>
-                <img src={ECom.CoverImage} alt="..." loading='lazy' />
+                <img src={ECom.CoverImage} className='Project_Image' alt="..." loading='lazy' />
             </div>
 
             <div className="Real-Life_Desc col-md-8 d-flex flex-column">

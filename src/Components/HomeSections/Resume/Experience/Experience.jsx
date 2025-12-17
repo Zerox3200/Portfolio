@@ -9,7 +9,7 @@ export default function Experience({ title, date, type, descriptions, link }) {
             <ul>
                 {descriptions?.map((desc, index) => <li key={index}>{desc}</li>)}
             </ul>
-            <p>Project Url : <a href={link} style={{ color: "blue", textDecoration: "none", fontWeight: "bold" }}>Project Url</a></p>
+            <p> <a href={link} style={{ color: "white", textDecoration: "none", fontWeight: "bold" }}>Project Url</a></p>
 
         </div>
     )
