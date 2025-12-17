@@ -2,35 +2,473 @@
 
 .Skills {
     width: 100%;
-    border: solid #f5f8fd 1px;
     height: max-content;
-    background-color: #f5f8fd;
-    margin-top: 20px;
-    padding: 30px 0;
+    padding: 80px 0;
+    position: relative;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    overflow: hidden;
 
-    .Skiils_pt1 {
-        h2 {
-            @include SectionsTitle();
+    // Skills Background Elements
+    .skills-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+
+        .bg-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            animation: float 20s ease-in-out infinite;
+
+            &.orb-1 {
+                width: 400px;
+                height: 400px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                top: 10%;
+                right: -200px;
+                animation-delay: 0s;
+            }
+
+            &.orb-2 {
+                width: 300px;
+                height: 300px;
+                background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                bottom: 20%;
+                left: -150px;
+                animation-delay: 10s;
+            }
+
+            &.orb-3 {
+                width: 250px;
+                height: 250px;
+                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+                top: 60%;
+                right: 10%;
+                animation-delay: 5s;
+            }
         }
 
-        p {
-            margin-top: 25px;
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+
+            .particle {
+                position: absolute;
+                font-size: 1.8rem;
+                filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+                z-index: 2;
+            }
+        }
+
+        .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(102, 126, 234, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(102, 126, 234, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+            animation: gridMove 25s linear infinite;
         }
     }
 
-    .Skills_Statics {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-content: flex-start;
-        row-gap: 18px;
+    .Skiils_pt1 {
+        position: relative;
+        z-index: 2;
 
-        @include Breakpoints(small) {
-            justify-content: center;
+        .title-container {
+            text-align: center;
+            margin-bottom: 50px;
+
+            h2 {
+                width: max-content;
+                margin: 0 auto 20px;
+                color: #f1f5f9;
+                font-size: 4rem;
+                font-weight: 800;
+                background: linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 50%, #667eea 100%);
+                background-size: 200% 200%;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                position: relative;
+                text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+
+                @include Breakpoints(mobile) {
+                    font-size: 2.5rem;
+                }
+            }
+
+            .title-underline {
+                width: 100px;
+                height: 4px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 2px;
+                margin: 0 auto;
+                box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+            }
         }
 
-        @include Breakpoints(mobile) {
-            justify-content: center;
+        .skills-intro {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+                transition: left 0.8s ease;
+            }
+
+            &:hover::before {
+                left: 100%;
+            }
+
+            @include Breakpoints(mobile) {
+                font-size: 1.1rem;
+                padding: 25px;
+            }
+        }
+
+        .Skills_Statics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+
+            @include Breakpoints(small) {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 25px;
+            }
+
+            @include Breakpoints(mobile) {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 20px;
+            }
+
+            .skill-icon-card {
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 25px;
+                padding: 30px 20px;
+                backdrop-filter: blur(15px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+                transition: all 0.4s ease;
+                position: relative;
+                overflow: hidden;
+                text-align: center;
+                cursor: pointer;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+                    opacity: 0;
+                    transition: opacity 0.4s ease;
+                    border-radius: 25px;
+                }
+
+                &:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+                    border-color: rgba(102, 126, 234, 0.3);
+
+                    &::before {
+                        opacity: 1;
+                    }
+
+                    .icon-container {
+                        transform: scale(1.1);
+                    }
+
+                    .skill-icon {
+                        filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.8));
+                    }
+                }
+
+                .icon-container {
+                    margin-bottom: 20px;
+                    transition: transform 0.4s ease;
+
+                    .skill-icon {
+                        font-size: 3.5rem;
+                        color: #f1f5f9;
+                        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+                        display: block;
+                        transition: all 0.4s ease;
+
+                        // Specific colors for different technologies
+                        &.react {
+                            color: #61dafb;
+                        }
+
+                        &.javascript {
+                            color: #f7df1e;
+                        }
+
+                        &.html5 {
+                            color: #e34f26;
+                        }
+
+                        &.css3 {
+                            color: #1572b6;
+                        }
+
+                        &.nodedotjs {
+                            color: #339933;
+                        }
+
+                        &.mongodb {
+                            color: #47a248;
+                        }
+
+                        &.express {
+                            color: #000000;
+                        }
+
+                        &.git {
+                            color: #f05032;
+                        }
+
+                        &.typescript {
+                            color: #3178c6;
+                        }
+
+                        &.nextdotjs {
+                            color: #000000;
+                        }
+
+                        &.redux {
+                            color: #764abc;
+                        }
+
+                        &.sass {
+                            color: #cc6699;
+                        }
+
+                        &.bootstrap {
+                            color: #7952b3;
+                        }
+
+                        &.materialui {
+                            color: #0081cb;
+                        }
+
+                        &.firebase {
+                            color: #ffca28;
+                        }
+
+                        &.postgresql {
+                            color: #336791;
+                        }
+
+                        &.docker {
+                            color: #2496ed;
+                        }
+
+                        &.amazonaws {
+                            color: #ff9900;
+                        }
+
+                        &.graphql {
+                            color: #e10098;
+                        }
+
+                        &.jest {
+                            color: #c21325;
+                        }
+
+                        @include Breakpoints(mobile) {
+                            font-size: 2.8rem;
+                        }
+                    }
+
+                    .fallback-icon {
+                        font-size: 3.5rem;
+                        color: #667eea;
+                        filter: drop-shadow(0 0 15px rgba(102, 126, 234, 0.6));
+
+                        @include Breakpoints(mobile) {
+                            font-size: 2.8rem;
+                        }
+                    }
+                }
+
+                .skill-info {
+                    position: relative;
+                    z-index: 2;
+
+                    h3 {
+                        color: #f1f5f9;
+                        font-size: 1.3rem;
+                        font-weight: 600;
+                        margin-bottom: 10px;
+                        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+
+                        @include Breakpoints(mobile) {
+                            font-size: 1.1rem;
+                        }
+                    }
+
+                    .skill-level {
+                        color: #667eea;
+                        font-size: 1.1rem;
+                        font-weight: 700;
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        text-shadow: 0 0 15px rgba(102, 126, 234, 0.5);
+
+                        @include Breakpoints(mobile) {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+
+                .skill-glow {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 100px;
+                    height: 100px;
+                    background: radial-gradient(circle, rgba(102, 126, 234, 0.2) 0%, transparent 70%);
+                    border-radius: 50%;
+                    pointer-events: none;
+                }
+            }
+        }
+
+        .skills-summary {
+            text-align: center;
+
+            .summary-card {
+                background: rgba(255, 255, 255, 0.05);
+                padding: 40px;
+                border-radius: 25px;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                transition: all 0.4s ease;
+                max-width: 600px;
+                margin: 0 auto;
+
+                h3 {
+                    color: #f1f5f9;
+                    font-size: 2rem;
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+
+                    @include Breakpoints(mobile) {
+                        font-size: 1.5rem;
+                    }
+                }
+
+                p {
+                    color: #cbd5e1;
+                    font-size: 1.1rem;
+                    line-height: 1.7;
+                    margin: 0;
+
+                    @include Breakpoints(mobile) {
+                        font-size: 1rem;
+                    }
+                }
+
+                &:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+                }
+            }
+        }
+    }
+}
+
+// Smooth Animations
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-30px) rotate(180deg);
+    }
+}
+
+@keyframes gridMove {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+    .Skills {
+        background: linear-gradient(135deg, #000000 0%, #1a1a2e 50%, #16213e 100%);
+    }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+    .Skills {
+        .skills-background .bg-orb {
+            animation: none;
+        }
+
+        .skills-background .floating-particles .particle {
+            animation: none;
+        }
+
+        .skills-background .grid-overlay {
+            animation: none;
+        }
+
+        .skill-icon-card .icon-container {
+            animation: none;
+        }
+
+        .skill-icon-card .skill-glow {
+            animation: none;
         }
     }
 }

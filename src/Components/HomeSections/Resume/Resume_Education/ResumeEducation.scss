@@ -35,11 +35,10 @@
     }
 
     p:first-of-type {
-        border: solid #e5edf9 1px;
         width: max-content;
         padding: 5px 15px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         font-weight: bold;
-        background-color: #e5edf9;
+        background: linear-gradient(180deg, rgba(102, 126, 234, 0.6), rgba(118, 75, 162, 0));
     }
 }

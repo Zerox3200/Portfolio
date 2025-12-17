@@ -54,6 +54,15 @@ export const Experiences = [
         ],
         link: "https://memahijab.com/"
     }, {
+        title: "Eterna Egypt Tours",
+        date: "Dec 2024 - Present",
+        type: "Tourism Website",
+        descriptions: [
+            `Eterna Egypt Tours is a comprehensive tourism platform offering exceptional tour packages and travel experiences in Egypt and countries around the world.`,
+            `The website provides users with a seamless booking experience, featuring detailed tour information, destination guides, and easy reservation systems for exploring historical sites, cultural experiences, and adventure tours across multiple countries.`
+        ],
+        link: "https://eternaegypttours.com/"
+    }, {
         title: "Al-Amira – Recruitment of Egyptian Workforce Abroad",
         date: "Feb 2025 - Mar 2025",
         type: "Web Application",
@@ -63,6 +72,16 @@ export const Experiences = [
             administrators to manage applications efficiently through an organized dashboard.`
         ],
         link: "https://memahijab.com/"
+    }, {
+        title: "Medical courses website for Al-Azhar University",
+        date: "Jan 2025 - Present",
+        type: "Web Application",
+        descriptions: [
+            `A comprehensive educational platform for Al-Azhar University offering both online and offline medical courses.`,
+            `The platform enables students and medical professionals to access course materials, attend virtual and in-person sessions, and track their learning progress.`,
+            `Additionally, the system includes features for monitoring intern performance and automatically generating professional portfolios for interns, showcasing their achievements and progress throughout their training period.`
+        ],
+        link: "https://azharcpd.com/"
     }, {
         title: "MedFlex – Digital Platform for Medical Courses (App & Dashboard)",
         date: "Sep 2024 - Still working",

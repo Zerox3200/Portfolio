@@ -11,7 +11,7 @@ import PortraitIcon from '@mui/icons-material/Portrait';
 import DisplaySettingsIcon from '@mui/icons-material/DisplaySettings';
 import ContactMailOutlinedIcon from '@mui/icons-material/ContactMailOutlined';
 import { useContext, useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { GoProjectSymlink } from "react-icons/go";
 import { Link } from 'react-router-dom';
 import SideNavButton from '../SideNavButton/SideNavButton';
@@ -87,48 +87,283 @@ function Nav() {
         };
     }, []);
 
+    const navVariants = {
+        hidden: { x: -300, opacity: 0 },
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+                staggerChildren: 0.1
+            }
+        },
+        exit: {
+            x: -300,
+            opacity: 0,
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 20
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { x: -50, opacity: 0 },
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                type: "spring",
+                stiffness: 200,
+                damping: 20
+            }
+        }
+    };
+
+    const profileVariants = {
+        hidden: { scale: 0.8, opacity: 0 },
+        visible: {
+            scale: 1,
+            opacity: 1,
+            transition: {
+                type: "spring",
+                stiffness: 200,
+                damping: 20,
+                delay: 0.2
+            }
+        }
+    };
+
     return <>
         <SideNavButton />
-        {ShowSide ? <div className="backdrop Show"></div> : <div className="backdrop Hide"></div>}
-        <nav className={ShowSide ? 'Sidenav' : 'Nav'}>
+        <AnimatePresence>
+            {ShowSide && (
+                <motion.div
+                    className="backdrop Show"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                />
+            )}
+        </AnimatePresence>
+
+        <motion.nav
+            className={ShowSide ? 'Sidenav' : 'Nav'}
+            variants={navVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+        >
             <div className="Nav_Intro">
-                <motion.img src={PersonalePhoto} alt="Personal" loading='lazy'
-                    initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} />
-                <h2>Ziad Ahmed</h2>
-                <div className="Accounts">
-                    <a href="https://www.facebook.com/ziad.ahmed.1481169/"
-                        aria-label="Read more about Seminole's new baby mayor" target='_blank' rel='noreferrer'>
+                {/* Profile Section */}
+                <motion.div
+                    className="profile-section"
+                    variants={profileVariants}
+                >
+                    <motion.div
+                        className="profile-image-container"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        <motion.img
+                            src={PersonalePhoto}
+                            alt="Personal"
+                            loading='lazy'
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8, delay: 0.3 }}
+                        />
+                        <div className="profile-glow"></div>
+                    </motion.div>
+
+                    <motion.h2
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                    >
+                        Ziad Ahmed
+                    </motion.h2>
+
+                    <motion.p
+                        className="profile-subtitle"
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 0.5 }}
+                    >
+                        Full Stack Developer
+                    </motion.p>
+                </motion.div>
+
+                {/* Social Accounts */}
+                <motion.div
+                    className="Accounts"
+                    variants={itemVariants}
+                >
+                    <motion.a
+                        href="https://www.facebook.com/ziad.ahmed.1481169/"
+                        aria-label="Facebook Profile"
+                        target='_blank'
+                        rel='noreferrer'
+                        whileHover={{ scale: 1.1, y: -5 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
                         <FacebookIcon />
-                    </a>
-                    <a href="https://wa.me/+201030602579"
-                        aria-label="Read more about Seminole's new baby mayor" target='_blank' rel='noreferrer'>
+                    </motion.a>
+                    <motion.a
+                        href="https://wa.me/+201030602579"
+                        aria-label="WhatsApp Contact"
+                        target='_blank'
+                        rel='noreferrer'
+                        whileHover={{ scale: 1.1, y: -5 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
                         <WhatsAppIcon />
-                    </a>
-                    <a href="https://www.instagram.com/ziadahmedsalah3200?utm_source=qr&igsh=MTUyaGV5dXh2bmt5cA=="
-                        aria-label="Read more about Seminole's new baby mayor"
-                        target='_blank' rel='noreferrer'>
+                    </motion.a>
+                    <motion.a
+                        href="https://www.instagram.com/ziadahmedsalah3200?utm_source=qr&igsh=MTUyaGV5dXh2bmt5cA=="
+                        aria-label="Instagram Profile"
+                        target='_blank'
+                        rel='noreferrer'
+                        whileHover={{ scale: 1.1, y: -5 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
                         <InstagramIcon />
-                    </a>
-                    <a href="https://www.linkedin.com/in/ziad-ahmed-8118a4233"
-                        aria-label="Read more about Seminole's new baby mayor" target='_blank' rel='noreferrer'>
+                    </motion.a>
+                    <motion.a
+                        href="https://www.linkedin.com/in/ziad-ahmed-8118a4233"
+                        aria-label="LinkedIn Profile"
+                        target='_blank'
+                        rel='noreferrer'
+                        whileHover={{ scale: 1.1, y: -5 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
                         <LinkedInIcon />
-                    </a>
-                </div>
-                <div className="Links">
-                    <p className={ActiveHome ? 'Active' : ''} onClick={() => scrollToSection('Intro')}><HomeOutlinedIcon /> Home</p>
-                    <p className={ActiveAbout ? 'Active' : ''} onClick={() => scrollToSection('About')}><PersonOutlineOutlinedIcon /> About</p>
-                    <p className={ActiveResume ? 'Active' : ''} onClick={() => scrollToSection('Resume')}><DescriptionOutlinedIcon /> Resume</p>
-                    <p className={ActivePortfolio ? "Active" : ''} onClick={() => scrollToSection('Projects')}><PortraitIcon /> Portfolio</p>
-                    <p className={ActiveService ? "Active" : ''} onClick={() => scrollToSection('Service')}><DisplaySettingsIcon /> Service</p>
-                    <p className={ActiveContact ? "Active" : ''} onClick={() => scrollToSection('ContactUs')}><ContactMailOutlinedIcon /> Contact</p>
-                    <Link to='Details'><GoProjectSymlink />Main Projects</Link >
-                </div>
+                    </motion.a>
+                </motion.div>
+
+                {/* Navigation Links */}
+                <motion.div
+                    className="Links"
+                    variants={itemVariants}
+                >
+                    <motion.p
+                        className={ActiveHome ? 'Active' : ''}
+                        onClick={() => scrollToSection('Intro')}
+                        whileHover={{ x: 10 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        <HomeOutlinedIcon />
+                        <span>Home</span>
+                        {ActiveHome && <motion.div className="active-indicator" layoutId="activeIndicator" />}
+                    </motion.p>
+
+                    <motion.p
+                        className={ActiveAbout ? 'Active' : ''}
+                        onClick={() => scrollToSection('About')}
+                        whileHover={{ x: 10 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        <PersonOutlineOutlinedIcon />
+                        <span>About</span>
+                        {ActiveAbout && <motion.div className="active-indicator" layoutId="activeIndicator" />}
+                    </motion.p>
+
+                    <motion.p
+                        className={ActiveResume ? 'Active' : ''}
+                        onClick={() => scrollToSection('Resume')}
+                        whileHover={{ x: 10 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        <DescriptionOutlinedIcon />
+                        <span>Resume</span>
+                        {ActiveResume && <motion.div className="active-indicator" layoutId="activeIndicator" />}
+                    </motion.p>
+
+                    <motion.p
+                        className={ActivePortfolio ? "Active" : ''}
+                        onClick={() => scrollToSection('Projects')}
+                        whileHover={{ x: 10 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        <PortraitIcon />
+                        <span>Portfolio</span>
+                        {ActivePortfolio && <motion.div className="active-indicator" layoutId="activeIndicator" />}
+                    </motion.p>
+
+                    <motion.p
+                        className={ActiveService ? "Active" : ''}
+                        onClick={() => scrollToSection('Service')}
+                        whileHover={{ x: 10 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        <DisplaySettingsIcon />
+                        <span>Service</span>
+                        {ActiveService && <motion.div className="active-indicator" layoutId="activeIndicator" />}
+                    </motion.p>
+
+                    <motion.p
+                        className={ActiveContact ? "Active" : ''}
+                        onClick={() => scrollToSection('ContactUs')}
+                        whileHover={{ x: 10 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        <ContactMailOutlinedIcon />
+                        <span>Contact</span>
+                        {ActiveContact && <motion.div className="active-indicator" layoutId="activeIndicator" />}
+                    </motion.p>
+                    {/* 
+                    <motion.div
+                        whileHover={{ x: 10 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        <Link to='Details' className="main-projects-link">
+                            <GoProjectSymlink />
+                            <span>Main Projects</span>
+                            <motion.div
+                                className="link-glow"
+                                whileHover={{ scale: 1.2 }}
+                                transition={{ duration: 0.3 }}
+                            />
+                        </Link>
+                    </motion.div> */}
+                </motion.div>
             </div>
-            <div className="Nav_End">
-                <p>Copy right@<b>IPortfolio</b></p>
-                <p>Dev. <span>Ziad Ahmed</span></p>
-            </div>
-        </nav>
+
+            <motion.div
+                className="Nav_End"
+                variants={itemVariants}
+            >
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8, duration: 0.6 }}
+                >
+                    Copy right@<b>IPortfolio</b>
+                </motion.p>
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.9, duration: 0.6 }}
+                >
+                    Dev. <span>Ziad Ahmed</span>
+                </motion.p>
+            </motion.div>
+        </motion.nav>
     </>
 }
 
